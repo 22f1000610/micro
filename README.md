@@ -189,7 +189,6 @@ python3 parse_chapters.py
 ## Credits
 - **Original Content**: Dr. Ritika Jain
 - **Digitization**: S.M. Muzammil Afroz
-- **Performance Improvements**: Digital Notes Enhancement Project
 
 ## License
 All rights to the content belong to **Dr. Ritika Jain**. This material is for educational purposes only.
