@@ -54,12 +54,13 @@ def parse_subtopics(html_file):
         elif element.name == 'h2':
             # Save previous subtopic if exists
             if current_subtopic and current_chapter:
+                sub_title = current_subtopic.get_text().strip() if hasattr(current_subtopic, 'get_text') else current_subtopic.get('text', '')
                 structure.append({
                     'id': subtopic_counter,
                     'chapter_id': current_chapter.get('id', ''),
                     'chapter_title': current_chapter['title'],
-                    'subtopic_id': current_subtopic.get('id', ''),
-                    'subtopic_title': current_subtopic.get_text().strip(),
+                    'subtopic_id': current_subtopic.get('id', '') if hasattr(current_subtopic, 'get') else current_subtopic.get('id', ''),
+                    'subtopic_title': sub_title,
                     'content': ''.join(str(tag) for tag in subtopic_content),
                     'type': 'subtopic'
                 })
